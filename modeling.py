@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import json
 
-def read_data(file_path):
+def read_training_data(file_path):
     with open(file_path, 'r') as file:
         data = json.load(file)
 
@@ -99,6 +99,6 @@ def train_model_xgb(df):
 
 
 def get_trained_model():
-    df = read_data("public_cases.json")
+    df = read_training_data("public_cases.json")
     model = train_model_xgb(df)
     return model
